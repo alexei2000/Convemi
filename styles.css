@@ -1,0 +1,118 @@
+/* esconder paginas en inicio */
+#region-bs-main-and-pre > div > div > ul > .page {
+  display: none;
+}
+
+/* estilos para la lista de cursos */
+#frontpage-course-list {
+  border-radius: 40px;
+  overflow: hidden;
+  border: none !important;
+}
+.courses.frontpage-course-list-all {
+  background: var(--light);
+}
+.courses.frontpage-course-list-all > div {
+  padding: 15px;
+  gap: 40px;
+  justify-content: center;
+}
+#frontpage-course-list > h2 {
+  text-align: center;
+  background: #2b4e84;
+  border: none !important;
+  color: #fff;
+}
+.courses.frontpage-course-list-all > div > div {
+  box-shadow: 1px 10px 7px -6px rgba(215, 215, 215, 1);
+  -webkit-box-shadow: 1px 10px 7px -6px rgba(215, 215, 215, 1);
+  -moz-box-shadow: 1px 10px 7px -6px rgba(215, 215, 215, 1);
+  background-color: var(--white);
+  border-radius: 0 0 15px 15px;
+  padding: 0;
+}
+.fp-coursethumb {
+  border: transparent !important;
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.fp-coursebox {
+  padding: 0 !important;
+}
+.fp-courseinfo > h5 > a {
+  font-size: 18px;
+}
+.fp-courseinfo {
+  padding: 15px;
+}
+#frontpage-course-list
+  .courses.frontpage-course-list-all
+  .fp-coursebox
+  .fp-coursethumb
+  a
+  img {
+  width: 100%;
+}
+
+/* estilos para el menu creado con un script */
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.menu-container > li {
+  position: relative;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+
+.menu-container > li:hover {
+  background-color: #082654;
+  cursor: pointer;
+}
+
+.menu-container > li > a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* estilos para el sub-menu creado con un script */
+
+.sub-menu-container {
+  flex-direction: column;
+  width: 200px;
+  background-color: #082654;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  visibility: hidden;
+}
+
+.sub-menu-container > li {
+  padding: 10px 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+
+.sub-menu-container > li:hover {
+  background-color: #2b4e84;
+  cursor: pointer;
+}
+
+.sub-menu-container > li > a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.visible {
+  visibility: visible !important;
+}

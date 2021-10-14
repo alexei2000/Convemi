@@ -1,0 +1,84 @@
+<script>
+  const data = [
+    {
+      title: "Inicio",
+      link: "https://convemi.gconex.com/",
+      childrens: [],
+    },
+    {
+      title: "Congreso",
+      childrens: [
+        { title: "Titulo 2", link: "#" },
+        { title: "Titulo 3", link: "#" },
+        { title: "Titulo 4", link: "#" },
+      ],
+    },
+    {
+      title: "Certificados",
+      childrens: [
+        { title: "Titulo 2", link: "#" },
+        { title: "Titulo 3", link: "#" },
+        { title: "Titulo 4", link: "#" },
+      ],
+    },
+    {
+      title: "Plenarias",
+      childrens: [
+        { title: "Titulo 2", link: "#" },
+        { title: "Titulo 3", link: "#" },
+        { title: "Titulo 4", link: "#" },
+      ],
+    },
+    {
+      title: "Ponencias",
+      childrens: [
+        { title: "Titulo 2", link: "#" },
+        { title: "Titulo 3", link: "#" },
+        { title: "Titulo 4", link: "#" },
+      ],
+    },
+  ];
+  //elemento donde se va a insertar todo
+  const nav = document.querySelector(
+    "#header > .header-menubar > .container > .navbar > ul"
+  );
+
+  const containerMenu = document.createElement("div");
+  containerMenu.className = "menu-container";
+
+  data.forEach(({ title, link, childrens }) => {
+    const Tab = document.createElement("li");
+    const Link = document.createElement("a");
+    Link.innerHTML = title;
+    if (link) {
+      Link.setAttribute("href", link);
+    }
+
+    const SubMenu = document.createElement("div");
+    if (childrens.length !== 0) {
+      SubMenu.className = "sub-menu-container";
+      Tab.addEventListener("mouseover", () => {
+        SubMenu.className = "sub-menu-container visible";
+      });
+      Tab.addEventListener("mouseout", () => {
+        SubMenu.className = "sub-menu-container";
+      });
+      //sub-menu
+      childrens.forEach(({ title, link }) => {
+        const SubTab = document.createElement("li");
+        const SubLink = document.createElement("a");
+        SubLink.innerHTML = title;
+        SubTab.appendChild(SubLink);
+        SubMenu.appendChild(SubTab);
+      });
+    }
+
+    Tab.appendChild(Link);
+    if (childrens.length !== 0) {
+      Tab.appendChild(SubMenu);
+    }
+    containerMenu.appendChild(Tab);
+  });
+
+  nav.insertAdjacentElement("afterbegin", containerMenu);
+</script>
