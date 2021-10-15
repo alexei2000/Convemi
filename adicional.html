@@ -8,9 +8,11 @@
     {
       title: "Congreso",
       childrens: [
-        { title: "Titulo 2", link: "#" },
-        { title: "Titulo 3", link: "#" },
-        { title: "Titulo 4", link: "#" },
+        { title: "Invitación", link: "#" },
+        {
+          title: "Programa",
+          link: "https://convemi.gconex.com/mod/page/view.php?id=33941",
+        },
       ],
     },
     {
@@ -67,6 +69,7 @@
       childrens.forEach(({ title, link }) => {
         const SubTab = document.createElement("li");
         const SubLink = document.createElement("a");
+        SubLink.setAttribute("href", link);
         SubLink.innerHTML = title;
         SubTab.appendChild(SubLink);
         SubMenu.appendChild(SubTab);
